@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/templates/gestor.xhtml">
+	<ui:define name="titulo">Crear temporada</ui:define>
+	<ui:define name="contenido">
+		<h:form>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="form-group">
+						<h:outputText value="Nombre"></h:outputText>
+						<p:inputText class="form-control" id="nombre"
+							value="#{beanTemporada.nombre}" />
+						<h:message for="nombre" style="color:red" />
+					</div>
+					<div class="form-group">
+						<h:outputText value="Lugar"></h:outputText>
+						<p:inputText class="form-control" id="lugar"
+							value="#{beanTemporada.lugar}" />
+					</div>
+					<div class="form-group">
+						<h:outputText value="Mínimo"></h:outputText>
+						<p:inputText class="form-control" id="minimo"
+							value="#{beanTemporada.minimo}" />
+					</div>
+
+					<div class="form-group">
+						<h:commandButton id="guardar" action="#{beanTemporada.submit}"
+							value="guardar" label="Guardar"></h:commandButton>
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<h3>Usuarios</h3>
+					<p:selectManyCheckbox id="basic" value="#{beanTemporada.checked}">
+						<f:selectItems value="#{beanTemporada.usuarios}" var="usuario"
+							itemLabel="#{usuario.usuario}" itemValue="#{usuario.usuario}" />
+					</p:selectManyCheckbox>
+
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

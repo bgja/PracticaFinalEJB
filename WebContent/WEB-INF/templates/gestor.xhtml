@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition templates="./base.xhtml">
+		<ui:define name="body">
+			<h:form>
+				<p:growl id="messages" />
+
+				<p:menubar>
+					<p:submenu label="Temporada" icon="ui-icon-document">
+						<p:menuitem value="Crear temporada" url="#" />
+						<p:separator />
+						<p:menuitem value="Listar temporadas" url="#" />
+					</p:submenu>
+
+					<p:submenu label="Partido" icon="ui-icon-pencil">
+						<p:menuitem value="Crear partido" url="#" />
+						<p:menuitem value="Listar partido" url="#" />
+					</p:submenu>
+					
+					<p:submenu label="Alineación" icon="ui-icon-pencil">
+						<p:menuitem value="Crear alineación" url="#" />
+						<p:menuitem value="Listar alineación" url="#" />
+					</p:submenu>
+
+					<f:facet name="options">
+						<p:commandButton type="button" value="Logout"
+							icon="ui-icon-extlink" />
+					</f:facet>
+				</p:menubar>
+			</h:form>
+		</ui:define>
+		<div class="container-fluid px-0">
+        <div class="content-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 align-middle">
+                        <h3><ui:insert name="titulo">Titulo</ui:insert></h3>
+                    </div>
+                    <div class="col-6 text-right aligh-middle">
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-lg-8">
+    				<ui:insert name="contenido">Contenido</ui:insert>
+    			</div>
+    		</div>
+    	</div>
+	</ui:composition>
+</h:body>
+
+</html>
